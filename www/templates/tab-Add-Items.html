@@ -1,0 +1,21 @@
+<ion-view view-title="Add Item"> // <!-- Title -->
+  <ion-content> <!-- Content of Tabs -->
+      
+      <h2>Add Task</h2> <!-- Heading -->
+          <button class="button button-large button-balanced" ng-click="addItem()"> <!-- Button to add users input -->
+            <h4>Add Task</h4><!-- Name on Button -->
+        </button>
+      
+      <div class="list">
+          <label class="item item-input"><!-- Putting Enter Task: and user input on same line -->
+            <span class="input-label icon ion-edit"> Enter Task:</span><!-- Asking user to Enter their Task -->
+            <input type="text" placeholder="Enter task here" ng-model="data.newItem"><!-- Placeholder telling user where to input their task and model telling program its the users info -->
+          </label>
+      </div>
+      
+      <div>
+        <img src="img/man.jpg" width="400" height="400" /> <!-- Image -->
+      </div>
+    
+  </ion-content>
+</ion-view>

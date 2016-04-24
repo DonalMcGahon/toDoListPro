@@ -1,0 +1,34 @@
+<ion-view view-title="To-Do"><!-- Title -->
+  <ion-content><!-- Content of Tab -->
+      
+      <h2>To-Do List</h2><!-- Heading -->
+      <ion-checkbox class="item item-checkbox checkbox-balanced" ng-repeat="task in data.items"><!-- Checkbox with user input -->
+        <ion-list ng-model="list" show-delete="showDelete"><!-- List shows delete button -->
+            
+            <ion-item>
+                <h2>{{ task.name }}</h2><!-- The name of task user inserted -->
+                <h6 ng-model="head.task" >Date Added : {{ task.date | date: 'dd-MM-yyyy' }}</h6><!-- Date task added -->
+                <h6>Time Added : {{ task.date | date: 'HH:mm' }}</h6><!-- Time task added -->
+                
+                <!-- Found from : http://ionicframework.com/docs/api/directive/ionDeleteButton/ -->
+                <ion-delete-button class="ion-minus-circled"
+                                   ng-click="data.showDelete = !data.showDelete; task.date = null; task.name = null; head.task = null">
+                </ion-delete-button><!-- Delete Button, when clicked deletes info -->
+                
+                
+            </ion-item>
+        </ion-list>
+      </ion-checkbox>
+      
+      <label class="toggle toggle-assertive"><!-- Toggle -->
+        <ion-toggle ng-class="toggle-JavaScript" ng-model="showDelete"><!-- Toggle is Red -->
+            <h3>Show Delete</h3><!-- Name on Toggle -->
+        </ion-toggle>
+        </label>
+      
+      <div>
+        <img src="img/taskman.jpg" width="400" height="400" /><!-- Image -->
+      </div>
+      
+  </ion-content>
+</ion-view>
